@@ -1,16 +1,21 @@
+import random
+switch = 0
 for i in range(100000):
-    lst = [1,0,0]           # one car and two goats
-    random.shuffle(lst)     # shuffles the list randomly
+    lst = [1,0,0]           
+    random.shuffle(lst)     
     
-    ran = random.randrange(3) # gets a random number for the random guess
+    ran = random.randrange(3) 
 
-    user = lst[ran] #storing the random guess 
+    user = lst[ran]  
 
-    del(lst[ran]) # deleting the random guess
+    del(lst[ran]) 
 
     huh = 0
-    for i in lst: # getting a value 0 and deleting it
-        if i ==0:
-            del(lst[huh]) # deletes a goat when it finds it
+    for i in lst: 
+        if i == 0:
+            del(lst[huh]) 
             break
-        huh+=1
+        huh += 1
+    if lst[0] == 1: 
+        switch += 1
+print("Switch =", switch)
